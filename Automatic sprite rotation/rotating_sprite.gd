@@ -4,6 +4,25 @@
 
 extends AnimatedSprite3D
 
+const IDLE_DIRECTION_ANIMATIONS = [
+	"idle dir 0",
+	"idle dir 1",
+	"idle dir 2",
+	"idle dir 3",
+	"idle dir 4",
+	"idle dir 5",
+	"idle dir 6",
+	"idle dir 7",
+	"idle dir 8",
+	"idle dir 9",
+	"idle dir 10",
+	"idle dir 11",
+	"idle dir 12",
+	"idle dir 13",
+	"idle dir 14",
+	"idle dir 15",
+]
+
 # Private variables
 # The camera that this sprite is rotating based on
 var camera: Camera
@@ -31,8 +50,10 @@ func _process(_delta: float) -> void:
 	relative_angle = wrapf(relative_angle, 0, TAU)
 	
 	# Display the texture that best corresponds to the orientation
-	frame = _round_angle(relative_angle, frames.get_frame_count(animation))
-
+#	var frame = _round_angle(relative_angle, frames.get_frame_count(animation))
+	var frame_index = _round_angle(relative_angle, len(IDLE_DIRECTION_ANIMATIONS))
+	animation = IDLE_DIRECTION_ANIMATIONS[frame_index]
+	
 
 # Gets the orientation of the camera
 # Returns: The camera's orientation, expressed as an angle around the global y 
