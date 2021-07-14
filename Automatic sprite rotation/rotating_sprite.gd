@@ -49,8 +49,7 @@ func _process(_delta: float) -> void:
 			PI/2 - _get_camera_angle()
 	relative_angle = wrapf(relative_angle, 0, TAU)
 	
-	# Display the texture that best corresponds to the orientation
-#	var frame = _round_angle(relative_angle, frames.get_frame_count(animation))
+	# Play the animation that best corresponds to the orientation
 	var frame_index = _round_angle(relative_angle, len(IDLE_DIRECTION_ANIMATIONS))
 	animation = IDLE_DIRECTION_ANIMATIONS[frame_index]
 	

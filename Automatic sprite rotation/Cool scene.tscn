@@ -307,4 +307,5 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0022893, 0.525261, 0.0268607
 billboard = 2
 frames = SubResource( 57 )
 animation = "idle dir 9"
+playing = true
 script = ExtResource( 3 )
